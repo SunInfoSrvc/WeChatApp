@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/srvc/srvc",
+    "pages/about/about"
+  ],
+  "window": {
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#ff0",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#16a",
+    "navigationBarTitleText": "朝阳信息服务",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#16a",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "朝阳",
+        "iconPath": "images/tab_sun_0.png",
+        "selectedIconPath": "images/tab_sun_1.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "信息",
+        "iconPath": "images/tab_info_0.png",
+        "selectedIconPath": "images/tab_info_1.png"
+      },
+      {
+        "pagePath": "pages/srvc/srvc",
+        "text": "服务",
+        "iconPath": "images/tab_srvc_0.png",
+        "selectedIconPath": "images/tab_srvc_1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

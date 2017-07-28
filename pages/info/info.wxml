@@ -1,0 +1,20 @@
+<view class="container">
+  <view>
+  <swiper style="height:200px" duration="2000" indicator-dots autoplay circular>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+  </view>
+
+  <view style="margin:80rpx;">
+    <button type="warn" size="mini" bindtap="goAbout">关于</button>
+    <button style="background-color:#ff0;" size="mini" open-type="contact">客服</button>
+    <button style="background-color:#16a;"size="mini" open-type="share">分享</button>
+    <button type="primary" bindtap="loadToast">模拟加载</button>
+    <progress wx:if="{{!hiddenProgress}}" percent="100" show-info active />
+  </view>
+</view>
