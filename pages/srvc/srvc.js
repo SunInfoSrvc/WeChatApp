@@ -1,25 +1,58 @@
 //index.js
-//获取应用实例
-var app = getApp()
 Page({
   data: {
-    userInfo: {}
+    navShow:true,
+    list:[
+      {
+        id:'xian',
+        name:'周末逛西安',
+        url:'logs'
+      },
+      {
+        id: 'kiwi',
+        name: '秦岭猕猴桃',
+        url: 'logs'
+      },
+      {
+        id: 'game',
+        name: '聚会小游戏',
+        url: 'logs'
+      },
+      {
+        id: 'party',
+        name: '约饭助手',
+        url: 'logs'
+      },
+      {
+        id: 'credit',
+        name: '征信助手',
+        url: 'logs'
+      },
+      {
+        id: 'house',
+        name: '验房助手',
+        url: 'logs'
+      },
+      {
+        id: 'scrum',
+        name: 'Scrum Pocker',
+        url: 'logs'
+      }
+    ]
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
+  navToApp:function(){
+    console.log('nav to App')
+    wx.navigateToMiniProgram({
+      appId: 'wxa68f90b9b5d774a8',
+      path: 'pages/logs/logs?id=123',
+      extraData: {
+        foo: 'bar'
+      },
+      envVersion: 'develop',
+      success(res) {
+        // 打开成功
+        console.log('打开成功')
+      }
     })
   }
 })

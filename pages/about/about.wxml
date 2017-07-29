@@ -1,6 +1,30 @@
 <!--about.wxml-->
-  <scroll-view bindscrolltoupper="upper" class="container">
-    <text >{{text}}</text>
-    <navigator url="/pages/logs/logs">跳转到新页面</navigator>
-    <navigator url="/pages/index/index" open-type="switchTab">切换 Tab</navigator>
-  </scroll-view>
+<scroll-view bindscrolltoupper="upper" class="container">
+  <text>{{text}}</text>
+  <navigator url="/pages/logs/logs">跳转到新页面</navigator>
+  <navigator url="/pages/index/index" open-type="switchTab">切换 Tab</navigator>
+</scroll-view>
+
+<view bindtap="bindViewTap" class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">Hi, {{userInfo.nickName}}</text>
+</view>
+
+
+<view class="page-section">
+  <view class="page-section-title">系统设置</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">获取个人信息</view>
+      <view class="weui-cell__ft">
+        <switch checked />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">获取地理位置</view>
+      <view class="weui-cell__ft">
+        <switch />
+      </view>
+    </view>
+  </view>
+</view>

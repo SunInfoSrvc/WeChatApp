@@ -1,6 +1,4 @@
 /**index.wxss**/
-
-
 .usermotto {
   margin-top: 80px;
   display: flex;
@@ -19,3 +17,5 @@
   font-size:14px;
   color: #aaa;
 }
+
+

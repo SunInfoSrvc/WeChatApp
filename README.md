@@ -13,12 +13,3 @@
 
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper"
 
-
-var data = require('../data/data_index.js')
-const BASE_URL = "http://gank.io/api";
-
-
-component
-<import src="../widget/rating.wxml" />
-<template name="m-user">
-

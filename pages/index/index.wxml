@@ -1,9 +1,10 @@
 <!--index.wxml-->
+<import src="/common/foot.wxml" />
 <view class="container">
-
-  <view  bindtap="bindViewTap" class="usermotto">
+  <view bindtap="bindViewTap" class="usermotto">
     <image class="usermotto-avatar" src="/images/sun.jpg" background-size="cover"></image>
     <text>{{motto}}</text>
     <text class="usermotto-desc">致力于新型信息技术在服务业的创新应用。</text>
   </view>
+  <template is="foot" />
 </view>
