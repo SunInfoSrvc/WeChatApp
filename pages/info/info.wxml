@@ -10,11 +10,14 @@
     <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
   </view>
 
-  <view style="margin:80rpx;">
+  <view style="margin:20rpx;text-align:center;">
+    <button type="primary" bindtap="goMap">地理定位</button>
     <button type="warn" size="mini" bindtap="goAbout">关于</button>
+    <button size="mini" bindtap="goScan">扫码</button>
     <button style="background-color:#ff0;" size="mini" open-type="contact">客服</button>
-    <button style="background-color:#16a;"size="mini" open-type="share">分享</button>
-    <button type="primary" bindtap="loadToast">模拟加载</button>
-    <progress wx:if="{{!hiddenProgress}}" percent="100" show-info active />
+    <button size="mini" bindtap="goPhone">电话</button>
+     <button style="background-color:#16a;"size="mini" open-type="share">分享</button>
+    <button type="primary" bindtap="loadToast">发起请求</button>
+     <progress wx:if="{{!hiddenProgress}}" percent="100" show-info active />
   </view>
 </view>

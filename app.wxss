@@ -10,7 +10,7 @@
 } 
 
 .page-foot{
-  margin: 360rpx 0 30rpx 0;
+  margin: 300rpx 0 30rpx 0;
   text-align: center;
   color: #1aad19;
   font-size: 0;

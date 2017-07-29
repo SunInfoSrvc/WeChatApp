@@ -12,4 +12,3 @@
 
 
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper"
-

@@ -20,17 +20,17 @@ Page({
       },
       {
         id: 'party',
-        name: '约饭助手',
+        name: '约饭小助手',
         url: 'logs'
       },
       {
         id: 'credit',
-        name: '征信助手',
+        name: '征信小助手',
         url: 'logs'
       },
       {
         id: 'house',
-        name: '验房助手',
+        name: '验房小助手',
         url: 'logs'
       },
       {
