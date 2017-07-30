@@ -1,4 +1,5 @@
 //index.js
+
 Page({
   data: {
     navShow:true,
@@ -12,34 +13,53 @@ Page({
         id: 'kiwi',
         name: '秦岭猕猴桃',
         url: 'logs'
-      },
-      {
-        id: 'game',
-        name: '聚会小游戏',
-        url: 'logs'
-      },
-      {
-        id: 'party',
-        name: '约饭小助手',
-        url: 'logs'
-      },
-      {
-        id: 'credit',
-        name: '征信小助手',
-        url: 'logs'
-      },
-      {
-        id: 'house',
-        name: '验房小助手',
-        url: 'logs'
-      },
-      {
-        id: 'scrum',
-        name: 'Scrum Pocker',
-        url: 'logs'
       }
     ]
   },
+  onLoad:function(){
+
+    console.log('onLoad')
+    var that = this
+
+    wx.request({
+      url: 'https://29040141.qcloud.la/api/App', //仅为示例，并非真实的接口地址
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        //更新数据
+        that.setData({
+          list: res.data
+        })
+      }
+    })
+
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      // title: '自定义转发标题',
+      // path: '/page/user?id=123',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
+  onPullDownRefresh: function () {
+
+  },
+
   navToApp:function(){
     console.log('nav to App')
     wx.navigateToMiniProgram({

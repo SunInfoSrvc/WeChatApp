@@ -4,18 +4,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  
+}
+
+.titletext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .usermotto-avatar {
-  width: 180rpx;
-  height: 180rpx;
-  margin: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  position:relative;
+  top: 500rpx;
+  margin: 100rpx 20rpx;
 }
 
 .usermotto-desc{
   margin: 30rpx;
   font-size:14px;
   color: #aaa;
+
 }
 
 

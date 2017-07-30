@@ -1,9 +1,30 @@
 <!--about.wxml-->
-<scroll-view bindscrolltoupper="upper" class="container">
-  <text>{{text}}</text>
-  <navigator url="/pages/logs/logs">跳转到新页面</navigator>
-  <navigator url="/pages/index/index" open-type="switchTab">切换 Tab</navigator>
+<scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+  <view style="background:red" class="scroll-view-item_H">
+    <icon type="search"  color="gray" size="60"/>
+    <navigator open-type="navigateBack">返回上一页</navigator>
+  </view>
+  <view style="background:yellow" class="scroll-view-item_H">
+    <icon type="waiting"  size="60"/>
+    <navigator url="/pages/logs/logs">跳转到新页面</navigator>
+  </view>
+  <view style="background:blue" class="scroll-view-item_H">
+    <icon type="success"  size="60"/>
+    <navigator url="/pages/index/index" open-type="switchTab">切换 Tab</navigator>
+  </view>
 </scroll-view>
+
+
+<slider bindchange="slider4change" min="50" max="200" show-value/>
+<button type="primary" bindtap="showActionSheet">显示动作菜单</button>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+
+
+
 
 <view bindtap="bindViewTap" class="userinfo">
   <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
@@ -17,13 +38,13 @@
     <view class="weui-cell weui-cell_switch">
       <view class="weui-cell__bd">获取个人信息</view>
       <view class="weui-cell__ft">
-        <switch checked />
+        <switch checked bindchange="switch1Change"/>
       </view>
     </view>
     <view class="weui-cell weui-cell_switch">
-      <view class="weui-cell__bd">获取地理位置</view>
+      <view class="weui-cell__bd">开始进行录音</view>
       <view class="weui-cell__ft">
-        <switch />
+        <switch bindchange="switch2Change"/>
       </view>
     </view>
   </view>

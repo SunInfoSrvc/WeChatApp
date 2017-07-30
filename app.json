@@ -7,8 +7,7 @@
     "pages/about/about"
   ],
   "window": {
-    "enablePullDownRefresh": false,
-    "backgroundColor": "#ff0",
+    "backgroundColor": "#16a",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#16a",
     "navigationBarTitleText": "朝阳信息服务",

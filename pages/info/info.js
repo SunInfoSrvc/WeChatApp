@@ -40,12 +40,28 @@ Page({
     wx.scanCode({
       success: (res) => {
         console.log(res)
+
+        wx.setClipboardData({ data: JSON.stringify(res) })
+
+        wx.showModal({
+          title: '扫码结果',
+          showCancel:false,
+          content: JSON.stringify(res)
+        })
+
       }
     })
   },
 
   goMap: function (e) {
-    wx.vibrateShort()
+    wx.vibrateLong()
+
+    wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 5000,
+      mask:true
+    })
 
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
@@ -82,32 +98,15 @@ Page({
       }
     })
 
-
-    wx.request({
-      url: 'http://29040141.qcloud.la:81/sun.jpg', //仅为示例，并非真实的接口地址
-      data: {
-        x: '',
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data)
-        wx.showModal({
-          title: '提示',
-          content: '这是一个模态弹窗',
-          success: function (res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
-      }
-    })
     this.setData({ hiddenProgress: false });
-    dialog.loading();
+    dialog.loading(); //用wx.showLoading代替？
+
+    wx.showModal({
+      title: '设备信息',
+      showCancel: false,
+      content: JSON.stringify(res)
+    })
+
+
   }
 })
