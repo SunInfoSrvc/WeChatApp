@@ -10,13 +10,23 @@
     <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
   </view>
 
+<view class="classname" style="margin:24rpx;">
+<picker style="margin-top:24rpx;width:150rpx;float:left;" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      图:{{array[index]}} 
+    </view>
+  </picker>
+  <slider style="width:350rpx;float:left;" bindchange="slider4change" min="5" max="100" show-value/>
+  </view>
+
   <view style="margin:20rpx;text-align:center;">
-    <button type="primary" bindtap="goMap">地理定位</button>
-    <button type="warn" size="mini" bindtap="goAbout">关于</button>
+    <button type="primary" size="mini" bindtap="goMap">定位</button>
+
     <button size="mini" bindtap="goScan">扫码</button>
     <button style="background-color:#ff0;" size="mini" open-type="contact">客服</button>
     <button size="mini" bindtap="goPhone">电话</button>
      <button style="background-color:#16a;"size="mini" open-type="share">分享</button>
+   
     <button type="primary" bindtap="loadToast">发起请求</button>
      <progress wx:if="{{!hiddenProgress}}" percent="100" show-info active />
   </view>

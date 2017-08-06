@@ -1,4 +1,6 @@
+
 //index.js
+
 Page({
   data: {
     motto: '朝阳信息服务',
@@ -14,12 +16,17 @@ Page({
     })
   },
 
-  onLoad:function(){
-    wx.playBackgroundAudio({
-      dataUrl: 'http://29040141.qcloud.la:81/audio.mp3',
-      title: '背景音乐',
-      coverImgUrl: 'http://29040141.qcloud.la:81/sun.jpg'
+  goAbout: function (e) {
+    wx.navigateTo({
+      url: '/pages/about/about',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
+  },
+
+
+  onLoad:function(){
 
   },
 
@@ -40,24 +47,12 @@ Page({
 
   animationRun: function () {
     var animation = wx.createAnimation({
-      duration: 5000,
-      timingFunction: 'ease',
-      delay: 0
-
-    })
-
-    animation
-    .translateY(-250)
-    .scale(3, 3)
-    .rotate(360)
-    .step()
-
-    animation
-    .rotate(3600)
-    .step({
       duration: 10000,
       timingFunction: 'ease',
+      delay: 0
     })
+
+    animation.rotate(3600).step()
 
     this.setData({
       animationData: animation.export()
@@ -99,11 +94,10 @@ Page({
     })
   },
 
-
   onShow: function () {
     this.animationRun()
-    this.animationRun2()
-    this.animationRun3()
+    // this.animationRun2()
+    // this.animationRun3()
 
   }
 

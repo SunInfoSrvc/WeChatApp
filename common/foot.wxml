@@ -1,5 +1,5 @@
 <template name="foot">
-  <navigator class="page-foot" openType="switchTab" url="/pages/logs/logs" hover-class="none">
+  <navigator class="page-foot"  bindtap="goAbout" hover-class="none">
     <image class="icon-foot" src="/images/logo.png"></image>
   </navigator>
 </template>

@@ -11,8 +11,6 @@ Page({
   data: {
     userInfo: {},
     text: initData,
-    array: ['美国', '中国', '巴西', '日本'],
-    index: 0,
   },
   //事件处理函数
   bindViewTap: function () {
@@ -61,7 +59,7 @@ Page({
   showActionSheet: function () {
     var that = this
     wx.showActionSheet({
-      itemList: ['进入设置', '选择地址', '打开文档'],
+      itemList: ['进入设置', '选择地址', '打开文档', '设备信息'],
       success: function (res) {
         console.log(res.tapIndex)
 
@@ -74,6 +72,9 @@ Page({
             break;
           case 2:
             that.openDocument()
+            break;
+          case 3:
+            that.showDeviceInfo()
             break;
           default:
         }
@@ -97,6 +98,34 @@ Page({
           }
         })
       }
+    })
+  },
+
+  showDeviceInfo: function(){
+    try {
+      var res = wx.getSystemInfoSync()
+      console.log('model: ' + res.model)
+      console.log('pixelRatio: ' + res.pixelRatio)
+      console.log('windowWidth: ' + res.windowWidth)
+      console.log('windowHeight: ' + res.windowHeight)
+      console.log('language: ' + res.language)
+      console.log('version: ' + res.version)
+      console.log('platform: ' + res.platform)
+    } catch (e) {
+      // Do something when catch error
+    }
+
+    wx.getNetworkType({
+      success: function (res) {
+        console.log('networkType: ' + res.networkType)
+      }
+    })
+
+
+    wx.showModal({
+      title: '设备信息',
+      showCancel: false,
+      content: JSON.stringify(res)
     })
   },
 

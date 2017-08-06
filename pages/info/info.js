@@ -13,14 +13,9 @@ Page({
     author: 'Andy',
     src: 'http://29040141.qcloud.la:81/audio.mp3',
 
-  },
-  goAbout: function (e) {
-    wx.navigateTo({
-      url: '/pages/about/about',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
+    array: ['朝阳', '信息', '服务', '演示'],
+    index: 0,
+
   },
 
   goTest: function (e) {
@@ -59,7 +54,7 @@ Page({
     wx.showToast({
       title: '成功',
       icon: 'success',
-      duration: 5000,
+      duration: 8000,
       mask:true
     })
 
@@ -79,33 +74,11 @@ Page({
   },
 
   loadToast: function (e) {
-    try {
-      var res = wx.getSystemInfoSync()
-      console.log('model: ' + res.model)
-      console.log('pixelRatio: ' + res.pixelRatio)
-      console.log('windowWidth: ' + res.windowWidth)
-      console.log('windowHeight: ' + res.windowHeight)
-      console.log('language: ' + res.language)
-      console.log('version: ' + res.version)
-      console.log('platform: ' + res.platform)
-    } catch (e) {
-      // Do something when catch error
-    }
 
-    wx.getNetworkType({
-      success: function (res) {
-        console.log('networkType: ' + res.networkType)
-      }
-    })
 
     this.setData({ hiddenProgress: false });
     dialog.loading(); //用wx.showLoading代替？
 
-    wx.showModal({
-      title: '设备信息',
-      showCancel: false,
-      content: JSON.stringify(res)
-    })
 
 
   }

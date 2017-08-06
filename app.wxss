@@ -9,15 +9,4 @@
   box-sizing: border-box;
 } 
 
-.page-foot{
-  margin: 300rpx 0 30rpx 0;
-  text-align: center;
-  color: #1aad19;
-  font-size: 0;
-}
 
-.icon-foot{
-  width: 36rpx;
-  height: 36rpx;
-  border-radius: 10rpx;
-}
